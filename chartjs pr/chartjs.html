@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChartJS</title>
+    <link rel="stylesheet" href="./chartjs.css">
+</head>
+<body>
+    <div id="main-container">
+        <h1>ChartJS is AWESOME!</h1>
+        <div id="chart-container">
+            <canvas id="my-chart"></canvas>
+        </div>
+    </div>
+    <script src="./chart.umd.js"></script>
+    <script>
+        const chart =document.querySelector('#my-chart');
+        const myChart = new Chart(
+            chart, {
+                type: 'line',
+                data: {
+                    labels: ['JAVA', 'PYTHON', 'HTML', 'JAVASCRIPT', 'CSS'],
+                    datasets: [{
+                        
+                        data: [
+                            30, 4, 10, 24, 60
+                        ],
+                        // data: [
+                        //     {x: '1', y: 40},
+                        //     {x: '2', y: 20},
+                        //     {x: '3', y: 50}
+                            
+                        // ],
+                        label: 'Value',
+                        backgroundColor: ['coral', 'aqua', 'pink', 'lightgreen', 'lightblue'],
+                       radius: 15,
+                        borderColor: ['red','blue', 'green', 'black', 'navy'],
+                        borderWidth: 10,
+                    }]
+                },
+                options: {
+                animation: true,
+                indexAxis: 'x',
+
+                elements: {
+                    line: {
+                        tension: 0.4
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        intersect: false,
+                    }
+                }
+            }
+            },
+            
+        )
+
+        
+    </script>
+</body>
+</html>
